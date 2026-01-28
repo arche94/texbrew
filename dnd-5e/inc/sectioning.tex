@@ -15,22 +15,21 @@
 
 \renewcommand*{\thepart}{\arabic{part}}
 \renewcommand*{\beforepartskip}{\null\vspace*{-55pt}\hspace*{-10pt}}
-\renewcommand*{\afterpartskip}{\clearpage\hbFullPageArtHook{\hbPartSubcover}}
-\renewcommand*{\printpartname}{\AddThispageHook{%
-    \thispagestyle{part}%
-    \begin{tb*}{\paperwidth}{0pt}{0pt}%
-      \includegraphics[width=\paperwidth,height=\paperheight]{\hbPartCover}
-    \end{tb*}%
-    \begin{tb*}{\paperwidth}{0pt}{0pt}%
-      \includegraphics[width=\paperwidth]{assets/header-part-circ}
-    \end{tb*}%
-    \begin{tb*}{.5\paperwidth}{0pt}{0pt}%
-      \includegraphics[width=.5\paperwidth]{assets/header-part}
-    \end{tb*}%
-    \begin{tb*}{.5\paperwidth}{.5\paperwidth}{0pt}
-      \reflectbox{\includegraphics[width=.5\paperwidth]{assets/header-part}}
-    \end{tb*}%
-  }%
+\renewcommand*{\afterpartskip}{\clearpage\hbFullPageArtHook{\hbPartSubcover}\twocolumn}
+\renewcommand*{\printpartname}{
+  \thispagestyle{part}%
+  \begin{tb*}{\paperwidth}{0pt}{0pt}%
+    \includegraphics[width=\paperwidth,height=\paperheight]{\hbPartCover}
+  \end{tb*}%
+  \begin{tb*}{\paperwidth}{0pt}{0pt}%
+    \includegraphics[width=\paperwidth]{assets/header-part-circ}
+  \end{tb*}%
+  \begin{tb*}{.5\paperwidth}{0pt}{0pt}%
+    \includegraphics[width=.5\paperwidth]{assets/header-part}
+  \end{tb*}%
+  \begin{tb*}{.5\paperwidth}{.5\paperwidth}{0pt}
+    \reflectbox{\includegraphics[width=.5\paperwidth]{assets/header-part}}
+  \end{tb*}%
   \hspace*{-8pt}\nodesto\fontsize{64pt}{64pt}\selectfont\color{chapter}PART%
 }
 \renewcommand*{\printpartnum}{\nodesto\fontsize{64pt}{64pt}\selectfont\color{chapter}\!\thepart}
@@ -171,22 +170,21 @@
     \includegraphics[width=\paperwidth,height=\paperheight]{\hbCover}
   \end{tb*}%
   % Splotch cover
-  \begin{figure*}[!b]
-    \begin{adjustwidth}{-20mm}{0mm}
-      \color{white}
-      %\vspace*{17.0cm}
-      \begin{overpic}[percent,unit=1mm,scale=.31]{\hbCoverSplotch} 
-        \put(12,5){\huge\hbCoverSplotchText}
-      \end{overpic}
-    \end{adjustwidth}
-    \begin{center}%
-      \LARGE\vfill%
-      % XXX: font doesn't look right
-      \fillstroke{[1]}{[0]}{.5}{\textbf{\hbSubtitle}}%
-    \end{center}%
-  \end{figure*}
+  % \begin{figure*}[!b]
+  %   \begin{adjustwidth}{-20mm}{0mm}
+  %     \color{white}
+  %     %\vspace*{17.0cm}
+  %     \begin{overpic}[percent,unit=1mm,scale=.31]{\hbCoverSplotch} 
+  %       \put(12,5){\huge\hbCoverSplotchText}
+  %     \end{overpic}
+  %   \end{adjustwidth}
+  %   \begin{center}%
+  %     \LARGE\vfill%
+  %     % XXX: font doesn't look right
+  %     \fillstroke{[1]}{[0]}{.5}{\textbf{\hbSubtitle}}%
+  %   \end{center}%
+  % \end{figure*}
   % End of splotch cover
-
   \clearpage%
   \twocolumn%
 }
@@ -194,11 +192,6 @@
 \newcommand{\hbMakesubcover}{%
   \onecolumn%
   \thispagestyle{empty}%
-  \AddThispageHook{
-    \begin{tb*}{\paperwidth}{0pt}{0pt}%
-      \includegraphics[width=\paperwidth,height=\paperheight]{\hbSubcover}
-    \end{tb*}%
-  }%
   \begin{center}%
     \nodesto%
     \fontsize{48pt}{48pt}\selectfont%
@@ -207,45 +200,48 @@
     \LARGE\vfill%
     \includegraphics[width=1.5cm]{assets/dnd-logo-amp}%
   \end{center}%
+  \begin{tb*}{\paperwidth}{0pt}{0pt}%
+    \includegraphics[width=\paperwidth,height=\paperheight]{\hbSubcover}
+ 	 \end{tb*}%
   \clearpage%
   \twocolumn%
 }
 
 \newcommand{\hbMakeBackcover}{%
+  \clearpage%
+  \let\clearpage\relax
+  \let\cleardoublepage\relax
   \onecolumn%
   \thispagestyle{empty}%
-  \AddThispageHook{
+  \begin{multicols*}{2}
+    \vspace*{2mm}
+    \begin{center}
+      \nodesto%
+      \definecolor{Backcoverheadercolor}{HTML}{ff2a1a}
+      \fontsize{36pt}{36pt}\selectfont%
+      \fillstroke{[1]}{[0]}{.5}{\textcolor{Backcoverheadercolor}{\hbBackcoverHeader}}\\*%
+    \end{center}
+    \begin{flushleft}%
+      \scaly%
+      \fontsize{12pt}{12pt}\selectfont%
+      \fillstroke{[1]}{[0]}{.5}{\textbf{\hbBackcoverContent}}%
+      \end{flushleft}%
+    \begin{center}
+      \includegraphics[width=.25\paperwidth]{assets/separator}\\
+      \vspace*{2mm}
+      \scaly%
+      \fontsize{12pt}{12pt}\selectfont%
+      \fillstroke{[1]}{[0]}{.5}{\textbf{\hbBackcoverClose}}%
+      \LARGE\vfill%
+      \includegraphics[width=3cm]{\hbBackcoverLogo} \\%
+      \fillstroke{[1]}{[0]}{.5}{\textbf{\hbBackcoverLink}}%
+    \end{center}
     \begin{tb*}{\paperwidth}{0pt}{0pt}%
       \includegraphics[width=\paperwidth,height=\paperheight]{\hbBackcover}
     \end{tb*}%
-    \begin{tb*}{0.55\paperwidth}{0pt}{0pt}%
+    \begin{tb*}{\paperwidth}{0pt}{0pt}%
       \includegraphics[width=0.55\paperwidth,height=\paperheight]{assets/backcover}
     \end{tb*}%
-  }%
-  %\twocolumn%
-\begin{multicols*}{2}
-  \vspace*{2mm}
-\begin{center}
-    \nodesto%
-    \definecolor{Backcoverheadercolor}{HTML}{ff2a1a}
-    \fontsize{36pt}{36pt}\selectfont%
-    \fillstroke{[1]}{[0]}{.5}{\textcolor{Backcoverheadercolor}{\hbBackcoverHeader}}\\*%
-\end{center}
-      \begin{flushleft}%
-    \scaly%
-    \fontsize{12pt}{12pt}\selectfont%
-    \fillstroke{[1]}{[0]}{.5}{\textbf{\hbBackcoverContent}}%
-        \end{flushleft}%
-\begin{center}%
-    \includegraphics[width=.25\paperwidth]{assets/separator}\\%
-  \vspace*{2mm}
-    \scaly%
-    \fontsize{12pt}{12pt}\selectfont%
-    \fillstroke{[1]}{[0]}{.5}{\textbf{\hbBackcoverClose}}%
-    \LARGE\vfill%
-    \includegraphics[width=3cm]{\hbBackcoverLogo} \\%
-    \fillstroke{[1]}{[0]}{.5}{\textbf{\hbBackcoverLink}}%
-  \end{center}%
-\end{multicols*}
+  \end{multicols*}
   \clearpage%
 }

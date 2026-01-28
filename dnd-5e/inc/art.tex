@@ -76,14 +76,12 @@
 }
 
 \newcommand*{\hbFullPageArtHook}[1]{%
-  \AddThispageHook{%
-    \begin{tb*}{\paperwidth}{0pt}{0pt}%
-      \includegraphics[width=\paperwidth,height=\paperheight]{#1}
-    \end{tb*}%
-    \begin{tb*}{\paperwidth}{0pt}{0pt}%
-      \includegraphics[width=\paperwidth,height=\paperheight]{assets/full-page-decoration}
-    \end{tb*}%
-  }%
+  \begin{tb*}{\paperwidth}{-10pt}{0pt}%
+    \includegraphics[width=\paperwidth,height=\paperheight]{#1}
+  \end{tb*}%
+  \begin{tb*}{\paperwidth}{-10pt}{0pt}%
+    \includegraphics[width=\paperwidth,height=\paperheight]{assets/full-page-decoration}
+  \end{tb*}%
 }
 
 \newcommand*{\hbFullPageArt}[1]{%
