@@ -160,11 +160,6 @@
 \newcommand{\hbMakecover}{
   \onecolumn%
   \thispagestyle{empty}%
-  \AddThispageHook{%
-    \begin{tb*}{\paperwidth}{0pt}{0pt}%
-      \includegraphics[width=\paperwidth,height=\paperheight]{\hbCover}
-    \end{tb*}%
-  }%
   \begin{center}%
     \vspace*{-15mm}\includegraphics[width=3cm]{assets/dnd-logo-initials}\\*\vspace*{15mm}%
     \nodesto%
@@ -172,6 +167,10 @@
     \fillstroke{[1]}{[0]}{1.5}{\MakeUppercase\hbTitle}\\*%
     \normalfont\normalsize\includegraphics[width=.5\paperwidth]{assets/separator}%
   \end{center}%
+  \begin{tb*}{\paperwidth}{0pt}{0pt}%
+    \includegraphics[width=\paperwidth,height=\paperheight]{\hbCover}
+  \end{tb*}%
+  % Splotch cover
   \begin{figure*}[!b]
     \begin{adjustwidth}{-20mm}{0mm}
       \color{white}
@@ -186,6 +185,8 @@
       \fillstroke{[1]}{[0]}{.5}{\textbf{\hbSubtitle}}%
     \end{center}%
   \end{figure*}
+  % End of splotch cover
+
   \clearpage%
   \twocolumn%
 }
