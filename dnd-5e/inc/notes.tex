@@ -56,38 +56,36 @@
   \setbeforeparaskip{\hbNotePrevParagraphSkip}%
 }
 
-% XXX where is that 1pt vertical offset FROM?!
 \newcommand*{\hbNoteDraw}{%
   \settowidth{\hbNoteBoxWidth}{\usebox{\hbNoteBox}}%
   \settoheight{\hbNoteBoxHeight}{\usebox{\hbNoteBox}}%
   \settodepth{\hbNoteBoxDepth}{\usebox{\hbNoteBox}}%
   \TPoptions{absolute=false}%
-  \noindent\vspace*{\hbNoteBH}\hspace*{\hbNoteBW}%
-  \begin{textblock*}{\linewidth}(0pt,-\hbNoteBH+1pt)
+  \begin{textblock*}{\linewidth}(0pt,-\hbNoteBH)
     \scalebox{1}[-1]{\includegraphics[width=1.307\hbNoteBH,height=\hbNoteBH]{assets/note-corner}}
   \end{textblock*}%
-  \begin{textblock*}{\linewidth}(\hbNoteBoxWidth-1.307\hbNoteBH,-\hbNoteBH+1pt)
+  \begin{textblock*}{\linewidth}(\hbNoteBoxWidth-1.307\hbNoteBH,-\hbNoteBH)
     \scalebox{-1}[-1]{\includegraphics[width=1.307\hbNoteBH,height=\hbNoteBH]{assets/note-corner}}
   \end{textblock*}%
-  \begin{textblock*}{\linewidth}(0pt,\hbNoteBoxHeight+\hbNoteBoxDepth+1pt)
+  \begin{textblock*}{\linewidth}(0pt,\hbNoteBoxHeight+\hbNoteBoxDepth)
     \scalebox{1}[1]{\includegraphics[width=1.307\hbNoteBH,height=\hbNoteBH]{assets/note-corner}}
   \end{textblock*}%
-  \begin{textblock*}{\linewidth}(\hbNoteBoxWidth-1.307\hbNoteBH,\hbNoteBoxHeight+\hbNoteBoxDepth+1pt)
+  \begin{textblock*}{\linewidth}(\hbNoteBoxWidth-1.307\hbNoteBH,\hbNoteBoxHeight+\hbNoteBoxDepth)
     \scalebox{-1}[1]{\includegraphics[width=1.307\hbNoteBH,height=\hbNoteBH]{assets/note-corner}}
   \end{textblock*}%
-  \begin{textblock*}{\linewidth}(1.306\hbNoteBH,-\hbNoteBH+1pt)
+  \begin{textblock*}{\linewidth}(1.306\hbNoteBH,-\hbNoteBH)
     \scalebox{1}[-1]{\includegraphics[width=\hbNoteBoxWidth-2.612\hbNoteBH,height=\hbNoteBH]{assets/note-bottom}}
   \end{textblock*}%
-  \begin{textblock*}{\linewidth}(1.306\hbNoteBH,\hbNoteBoxHeight+\hbNoteBoxDepth+1pt)
+  \begin{textblock*}{\linewidth}(1.306\hbNoteBH,\hbNoteBoxHeight+\hbNoteBoxDepth)
     \includegraphics[width=\hbNoteBoxWidth-2.612\hbNoteBH,height=\hbNoteBH]{assets/note-bottom}
   \end{textblock*}%
-  \begin{textblock*}{\linewidth}(-\hbNoteBW,1pt)
+  \begin{textblock*}{\linewidth}(-\hbNoteBW,0pt)
     \includegraphics[width=\hbNoteBW,height=\hbNoteBoxHeight+\hbNoteBoxDepth]{assets/note-side}
   \end{textblock*}%
-  \begin{textblock*}{\linewidth}(\hbNoteBoxWidth,1pt)
+  \begin{textblock*}{\linewidth}(\hbNoteBoxWidth,0pt)
     \reflectbox{\includegraphics[width=\hbNoteBW,height=\hbNoteBoxHeight+\hbNoteBoxDepth]{assets/note-side}}
   \end{textblock*}%
-  \usebox{\hbNoteBox}\vspace*{\hbNoteBH}%
+  \usebox{\hbNoteBox}
   \TPoptions{absolute=true}%
 }
 
@@ -96,10 +94,14 @@
 \begin{figure}[#1]%
   \sbox{\hbNoteBox}{%
     \colorbox{note}{%
-      \hspace*{\hbNotePadding}\begin{minipage}[b]{\linewidth-2\hbNotePadding-2\hbNoteBW-2\fboxsep}%
+      \hspace*{\hbNotePadding}
+      \begin{minipage}[b]{\linewidth-2\hbNotePadding-2\hbNoteBW-2\fboxsep}%
+        \hspace*{\hbNoteBW}%
+        \vspace*{\hbNoteBH}
         \setlength{\parskip}{\hbNoteCurparskip}%
         \setlength{\parindent}{\hbNoteCurparindent}%
         \noindent\scaly\small\BODY%
+        \vspace*{\hbNoteBH}%
       \end{minipage}%
       \hspace*{\hbNotePadding}%
     }%
@@ -114,10 +116,14 @@
 \begin{figure*}[#1]%
   \sbox{\hbNoteBox}{%
     \colorbox{note}{%
-      \hspace*{\hbNotePadding}\begin{minipage}[b]{\linewidth-2\hbNotePadding-2\hbNoteBW-2\fboxsep}%
+      \hspace*{\hbNotePadding}
+      \begin{minipage}[b]{\linewidth-2\hbNotePadding-2\hbNoteBW-2\fboxsep}%
+        \hspace*{\hbNoteBW}%
+        \vspace*{\hbNoteBH}%
         \setlength{\parskip}{\hbNoteCurparskip}%
         \setlength{\parindent}{\hbNoteCurparindent}%
         \noindent\scaly\small\BODY%
+        \vspace*{\hbNoteBH}%
       \end{minipage}%
       \hspace*{\hbNotePadding}%
     }%
@@ -127,38 +133,36 @@
 \hbNoteAfter%
 }
 
-% XXX same
 \newcommand*{\hbNoteDrawVar}{%
   \settowidth{\hbNoteBoxWidth}{\usebox{\hbNoteBox}}%
   \settoheight{\hbNoteBoxHeight}{\usebox{\hbNoteBox}}%
   \settodepth{\hbNoteBoxDepth}{\usebox{\hbNoteBox}}%
   \TPoptions{absolute=false}%
-  \noindent\hspace*{\hbNoteRW}%
-  \begin{textblock*}{\linewidth}(-.5\hbNoteRW,1pt-\hbNotePS)
+  \begin{textblock*}{\linewidth}(-.5\hbNoteRW,-\hbNotePS)
   \includegraphics[width=\hbNoteBoxWidth+\hbNoteRW,height=\hbNotePS]{assets/note-var-top}
   \end{textblock*}%
-  \begin{textblock*}{\linewidth}(-.5\hbNoteRW,1pt+\hbNoteBoxHeight+\hbNoteBoxDepth)
+  \begin{textblock*}{\linewidth}(-.5\hbNoteRW,\hbNoteBoxHeight+\hbNoteBoxDepth)
   \scalebox{1}[-1]{\includegraphics[width=\hbNoteBoxWidth+\hbNoteRW,height=\hbNotePS]{assets/note-var-top}}
   \end{textblock*}%
-  \begin{textblock*}{\hbNotePS}(-.5\hbNotePS-.5\hbNoteRW,1pt-\hbNotePS)
+  \begin{textblock*}{\hbNotePS}(-.5\hbNotePS-.5\hbNoteRW,-\hbNotePS)
   \includegraphics[width=\hbNotePS,height=\hbNotePS]{assets/note-var-corner}
   \end{textblock*}%
-  \begin{textblock*}{\hbNotePS}(\hbNoteBoxWidth+.5\hbNoteRW-.5\hbNotePS,1pt-\hbNotePS)
+  \begin{textblock*}{\hbNotePS}(\hbNoteBoxWidth+.5\hbNoteRW-.5\hbNotePS,-\hbNotePS)
   \includegraphics[width=\hbNotePS,height=\hbNotePS]{assets/note-var-corner}
   \end{textblock*}%
-  \begin{textblock*}{\hbNotePS}(-.5\hbNotePS-.5\hbNoteRW,1pt+\hbNoteBoxHeight+\hbNoteBoxDepth)
+  \begin{textblock*}{\hbNotePS}(-.5\hbNotePS-.5\hbNoteRW,\hbNoteBoxHeight+\hbNoteBoxDepth)
   \includegraphics[width=\hbNotePS,height=\hbNotePS]{assets/note-var-corner}
   \end{textblock*}%
-  \begin{textblock*}{\hbNotePS}(\hbNoteBoxWidth+.5\hbNoteRW-.5\hbNotePS,1pt+\hbNoteBoxHeight+\hbNoteBoxDepth)
+  \begin{textblock*}{\hbNotePS}(\hbNoteBoxWidth+.5\hbNoteRW-.5\hbNotePS,\hbNoteBoxHeight+\hbNoteBoxDepth)
   \includegraphics[width=\hbNotePS,height=\hbNotePS]{assets/note-var-corner}
   \end{textblock*}%
-  \begin{textblock*}{\hbNoteRW}(-\hbNoteRW,1pt-.5\hbNotePS)
+  \begin{textblock*}{\hbNoteRW}(-\hbNoteRW,-.5\hbNotePS)
   {\color{chapter}\rule{\hbNoteRW}{\hbNoteBoxHeight+\hbNoteBoxDepth+\hbNotePS}}
   \end{textblock*}%
-  \begin{textblock*}{\hbNoteRW}(\hbNoteBoxWidth,1pt-.5\hbNotePS)
+  \begin{textblock*}{\hbNoteRW}(\hbNoteBoxWidth,-.5\hbNotePS)
   {\color{chapter}\rule{\hbNoteRW}{\hbNoteBoxHeight+\hbNoteBoxDepth+\hbNotePS}}
   \end{textblock*}%
-  \usebox{\hbNoteBox}\hspace*{\hbNoteRW}%
+  \usebox{\hbNoteBox}
   \TPoptions{absolute=true}%
 }
 
@@ -167,10 +171,13 @@
 \begin{figure}[#1]%
   \sbox{\hbNoteBox}{%
     \colorbox{white}{%
-      \hspace*{\hbNotePadding}\begin{minipage}[b]{\linewidth-2\hbNotePadding-2\hbNoteRW-2\fboxsep}%
+      \hspace*{\hbNotePadding}
+      \begin{minipage}[b]{\linewidth-2\hbNotePadding-2\hbNoteRW-2\fboxsep}%
+        \hspace*{\hbNoteRW}%
         \setlength{\parskip}{\hbNoteCurparskip}%
         \setlength{\parindent}{\hbNoteCurparindent}%
         \noindent\scaly\small\BODY%
+        \hspace*{\hbNoteRW}%
       \end{minipage}%
       \hspace*{\hbNotePadding}%
     }%
@@ -185,10 +192,13 @@
 \begin{figure*}[#1]%
   \sbox{\hbNoteBox}{%
     \colorbox{white}{%
-      \hspace*{\hbNotePadding}\begin{minipage}[b]{\linewidth-2\hbNotePadding-2\hbNoteRW-2\fboxsep}%
+      \hspace*{\hbNotePadding}
+      \begin{minipage}[b]{\linewidth-2\hbNotePadding-2\hbNoteRW-2\fboxsep}%
+        \hspace*{\hbNoteRW}%
         \setlength{\parskip}{\hbNoteCurparskip}%
         \setlength{\parindent}{\hbNoteCurparindent}%
         \noindent\scaly\small\BODY%
+        \hspace*{\hbNoteRW}%
       \end{minipage}%
       \hspace*{\hbNotePadding}%
     }%
@@ -204,32 +214,31 @@
   \settoheight{\hbNoteBoxHeight}{\usebox{\hbNoteBox}}%
   \settodepth{\hbNoteBoxDepth}{\usebox{\hbNoteBox}}%
   \TPoptions{absolute=false}%
-  \noindent\vspace*{\hbNoteSBH}\hspace*{\hbNoteBW}%
-  \begin{textblock*}{\linewidth}(-\hbNoteOL,-\hbNoteSBH+1pt)
+  \begin{textblock*}{\linewidth}(-\hbNoteOL,-\hbNoteSBH)
     \scalebox{1}[-1]{\includegraphics[width=0.869\hbNoteSBH,height=\hbNoteSBH]{assets/note-monster-corner}}
   \end{textblock*}%
-  \begin{textblock*}{\linewidth}(\hbNoteOL+\hbNoteBoxWidth-0.869\hbNoteSBH,-\hbNoteSBH+1pt)
+  \begin{textblock*}{\linewidth}(\hbNoteOL+\hbNoteBoxWidth-0.869\hbNoteSBH,-\hbNoteSBH)
     \scalebox{-1}[-1]{\includegraphics[width=0.869\hbNoteSBH,height=\hbNoteSBH]{assets/note-monster-corner}}
   \end{textblock*}%
-  \begin{textblock*}{\linewidth}(-\hbNoteOL,\hbNoteBoxHeight+\hbNoteBoxDepth+1pt)
+  \begin{textblock*}{\linewidth}(-\hbNoteOL,\hbNoteBoxHeight+\hbNoteBoxDepth)
     \scalebox{1}[1]{\includegraphics[width=0.869\hbNoteSBH,height=\hbNoteSBH]{assets/note-monster-corner}}
   \end{textblock*}%
-  \begin{textblock*}{\linewidth}(\hbNoteOL+\hbNoteBoxWidth-0.869\hbNoteSBH,\hbNoteBoxHeight+\hbNoteBoxDepth+1pt)
+  \begin{textblock*}{\linewidth}(\hbNoteOL+\hbNoteBoxWidth-0.869\hbNoteSBH,\hbNoteBoxHeight+\hbNoteBoxDepth)
     \scalebox{-1}[1]{\includegraphics[width=0.869\hbNoteSBH,height=\hbNoteSBH]{assets/note-monster-corner}}
   \end{textblock*}%
-  \begin{textblock*}{\linewidth}(-\hbNoteOL+0.869\hbNoteSBH,-\hbNoteSBH+1pt)
+  \begin{textblock*}{\linewidth}(-\hbNoteOL+0.869\hbNoteSBH,-\hbNoteSBH)
     \scalebox{1}[-1]{\includegraphics[width=2\hbNoteOL+\hbNoteBoxWidth-1.739\hbNoteSBH,height=\hbNoteSBH]{assets/note-monster-top}}
   \end{textblock*}%
-  \begin{textblock*}{\linewidth}(-\hbNoteOL+0.869\hbNoteSBH,\hbNoteBoxHeight+\hbNoteBoxDepth+1pt)
+  \begin{textblock*}{\linewidth}(-\hbNoteOL+0.869\hbNoteSBH,\hbNoteBoxHeight+\hbNoteBoxDepth)
     \includegraphics[width=2\hbNoteOL+\hbNoteBoxWidth-1.739\hbNoteSBH,height=\hbNoteSBH]{assets/note-monster-top}
   \end{textblock*}%
-  \begin{textblock*}{\linewidth}(-0.1pt-\hbNoteBW,1pt)
+  \begin{textblock*}{\linewidth}(-\hbNoteBW,0pt)
     \includegraphics[width=\hbNoteBW,height=\hbNoteBoxHeight+\hbNoteBoxDepth]{assets/note-side}
   \end{textblock*}%
-  \begin{textblock*}{\linewidth}(0.1pt+\hbNoteBoxWidth,1pt)
+  \begin{textblock*}{\linewidth}(\hbNoteBoxWidth,0pt)
     \reflectbox{\includegraphics[width=\hbNoteBW,height=\hbNoteBoxHeight+\hbNoteBoxDepth]{assets/note-side}}
   \end{textblock*}%
-  \usebox{\hbNoteBox}\vspace*{\hbNoteSBH}%
+  \usebox{\hbNoteBox}
   \TPoptions{absolute=true}%
 }
 
@@ -238,10 +247,14 @@
 \begin{figure}[#1]%
   \sbox{\hbNoteBox}{%
     \colorbox{statblock}{%
-      \hspace*{\hbNotePadding}\begin{minipage}[b]{\linewidth-2\hbNotePadding-2\hbNoteRW-2\fboxsep}%
+      \hspace*{\hbNotePadding}
+      \begin{minipage}[b]{\linewidth-2\hbNotePadding-2\hbNoteRW-2\fboxsep}%
+        \hspace*{\hbNoteBW}%
+        \vspace*{\hbNoteBH}%
         \setlength{\parskip}{\hbNoteCurparskip}%
         \setlength{\parindent}{\hbNoteCurparindent}%
         \noindent\scaly\BODY%
+        \vspace*{\hbNoteBH}%
       \end{minipage}%
       \hspace*{\hbNotePadding}%
     }%
@@ -256,10 +269,14 @@
 \begin{figure*}[#1]%
   \sbox{\hbNoteBox}{%
     \colorbox{statblock}{%
-      \hspace*{\hbNotePadding}\begin{minipage}[b]{\linewidth-2\hbNotePadding-2\hbNoteRW-2\fboxsep}%
+      \hspace*{\hbNotePadding}
+      \begin{minipage}[b]{\linewidth-2\hbNotePadding-2\hbNoteRW-2\fboxsep}%
+        \hspace*{\hbNoteBW}%
+        \vspace*{\hbNoteBH}%
         \setlength{\parskip}{\hbNoteCurparskip}%
         \setlength{\parindent}{\hbNoteCurparindent}%
         \noindent\scaly\BODY%
+        \vspace*{\hbNoteBH}%
       \end{minipage}%
       \hspace*{\hbNotePadding}%
     }%
