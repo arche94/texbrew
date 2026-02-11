@@ -10,142 +10,140 @@
 
 \begin{document}
 
-\frontmatter
+  \frontmatter
 
-\renewcommand{\hbTitle}{Placeholder Title \protect\\ That is kind of long}
-\renewcommand{\hbSubtitle}{Created by Artefact2, typeset with \XeTeX \protect\\ \url{https://github.com/Artefact2/texbrew/}}
-\renewcommand*{\hbCover}{assets/samples/cover}
-% \renewcommand{\hbCoverSplotchText}{\almendra\bfseries\LARGE{HOMEBREW WITH TEXBREW}}
-\hbMakecover
+  \renewcommand{\hbTitle}{Placeholder Title \protect\\ That is kind of long}
+  \renewcommand*{\hbCover}{assets/samples/cover}
+  % \renewcommand{\hbCoverSplotchText}{\almendra\bfseries\LARGE{HOMEBREW WITH TEXBREW}}
+  % \renewcommand{\hbSubtitle}{Created by Artefact2, typeset with \XeTeX \protect\\ \url{https://github.com/Artefact2/texbrew/}}
+  \hbMakecover
 
 % Use assets/background if you don't want a cover. You can put your
 % own assets under assets/ext/.
-\renewcommand*{\hbSubcover}{assets/samples/cover2}
-\hbMakesubcover
+  \renewcommand*{\hbSubcover}{assets/samples/cover2}
+  \hbMakesubcover
 
-\paragraph*{Acknowledgments} {\footnotesize \lipsum[100-101]}
+  \paragraph*{Acknowledgments} {\footnotesize \lipsum[100-101]}
 
-\paragraph*{Credits}
+  \paragraph*{Credits}
 
-{\footnotesize
-\begin{itemize}
-\input{assets/CREDITS.tex}
-\input{assets/samples/CREDITS.tex} % You can probably omit this if you don't use any of the sample assets
-% Add your own credits here
-\end{itemize}}
+  {\footnotesize
+  \begin{itemize}
+  \input{assets/CREDITS.tex}
+  \input{assets/samples/CREDITS.tex} % You can probably omit this if you don't use any of the sample assets
+  % Add your own credits here
+  \end{itemize}}
 
-\clearpage
-\tableofcontents*
+  \clearpage
+  \tableofcontents*
 
-\vfill\break
-\listoftables*
+  \vfill\break
+  \listoftables*
 
-\mainmatter
+  \mainmatter
 
-\hbRootChapter{Preface}
+  \hbRootChapter{Preface}
 
-\hbLettrine{D}{onec metus metus.} \lipsum[104-105]
+  \hbLettrine{D}{onec metus metus.} \lipsum[104-105]
 
-\lipsum[107-110]
+  \lipsum[107-110]
 
-\begin{hbNote}[t]
-\subsubsection*{Note Template}
-\paragraph*{Urna sapien.} \lipsum[2]
-\paragraph*{Aliquam ligula.} \lipsum[3]
-\end{hbNote}
+  \begin{hbNote}[t]
+    \subsubsection*{Note Template}
+    \paragraph*{Urna sapien.} \lipsum[2]
+    \paragraph*{Aliquam ligula.} \lipsum[3]
+  \end{hbNote}
 
-\begin{hbNoteWide2}
-\begin{multicols}{2}
-\subsubsection*{Wide Variant Note Template}
-\noindent\lipsum[11-13]
-\end{multicols}
-\end{hbNoteWide2}
+  \begin{hbNoteWide2}
+  \begin{multicols}{2}
+  \subsubsection*{Wide Variant Note Template}
+  \noindent\lipsum[11-13]
+  \end{multicols}
+  \end{hbNoteWide2}
 
-\lipsum[4-12]
+  \lipsum[4-12]
 
-\hbRootChapter{Introduction}
+  \hbRootChapter{Introduction}
 
-\begin{hbNote2}[b]
-\subsubsection*{Variant Note Template}
-\noindent\lipsum[106]
-\end{hbNote2}
+  \begin{hbNote2}[b]
+  \subsubsection*{Variant Note Template}
+  \noindent\lipsum[106]
+  \end{hbNote2}
 
-\begin{hbNoteWide}[b]
-\begin{multicols}{2}
-\subsubsection*{Wide Note Template}
-\noindent\lipsum[13-14]
-\end{multicols}
-\end{hbNoteWide}
+  \begin{hbNoteWide}[b]
+  \begin{multicols}{2}
+  \subsubsection*{Wide Note Template}
+  \noindent\lipsum[13-14]
+  \end{multicols}
+  \end{hbNoteWide}
 
-\hbLettrine{S}{uspendisse in odio.} \lipsum[110-111]
+  \hbLettrine{S}{uspendisse in odio.} \lipsum[110-111]
 
-\begin{hbMonsterNote}
-\subsubsection*{This is a monster statblock note.}
-\noindent\lipsum[16]
-\end{hbMonsterNote}
+  \begin{hbMonsterNote}
+  \subsubsection*{This is a monster statblock note.}
+  \noindent\lipsum[16]
+  \end{hbMonsterNote}
 
-\lipsum[112-115]
+  \lipsum[112-115]
 
-\section*{Libero eget} \lipsum[116-118]
-\section*{Nam eros} \lipsum[119-120]
+  \section*{Libero eget} \lipsum[116-118]
+  \section*{Nam eros} \lipsum[119-120]
 
-\subsection*{Donec eleifend} \lipsum[120-121]
-\subsection*{Vitae metus} \lipsum[124-125]
+  \subsection*{Donec eleifend} \lipsum[120-121]
+  \subsection*{Vitae metus} \lipsum[124-125]
 
-\begin{hbStatBlock}
-\subsection*{Stat Block Template}
-\hbSBType{Nisi dolor, ultricies}
-\hbSBSep
-\begin{hbStatBlockDescription}
-\item[Scelerisque] 17 (9+8)
-\item[Accumsan] Suscipit salpen
-\item[Dictum] In nunc
-\end{hbStatBlockDescription}
-\hbSBSep
-\hbSBAttributes{9}{12}{10}{2}{7}{4}
-\hbSBSep
-\begin{hbStatBlockDescription}
-\item[Odio molestie] Condimentum
-\item[Egestas] \hbNone
-\item[Vitae] Gravida fringilla
-\end{hbStatBlockDescription}
-\hbSBSep
+  \begin{hbStatBlock}
+    \subsection*{Stat Block Template}
+    \hbSBType{Nisi dolor, ultricies}
+    \hbSBSep
+    \begin{hbStatBlockDescription}
+      \item[Scelerisque] 17 (9+8)
+      \item[Accumsan] Suscipit salpen
+      \item[Dictum] In nunc
+    \end{hbStatBlockDescription}
+    \hbSBSep
+    \hbSBAttributes{9}{12}{10}{2}{7}{4}
+    \hbSBSep
+    \begin{hbStatBlockDescription}
+      \item[Odio molestie] Condimentum
+      \item[Egestas] \hbNone
+      \item[Vitae] Gravida fringilla
+    \end{hbStatBlockDescription}
+    \hbSBSep
 
-\paragraph*{Morbi consequat.} Donec venenatis, eros in tincidunt luctus, lorem est facilisis quam, et vulputate lectus tortor non libero.
+    \paragraph*{Morbi consequat.} Donec venenatis, eros in tincidunt luctus, lorem est facilisis quam, et vulputate lectus tortor non libero.
 
-\paragraph*{Maecenas suscipit.} Donec pharetra diam quis placerat maximus.
+    \paragraph*{Maecenas suscipit.} Donec pharetra diam quis placerat maximus.
 
-\subsubsection*{Actions}
+    \subsubsection*{Actions}
 
-\paragraph*{Erat volutpat.} Aenean luctus metus leo, ac aliquam mi viverra ut. Ut condimentum risus sed velit egestas, quis blandit neque pulvinar.
+    \paragraph*{Erat volutpat.} Aenean luctus metus leo, ac aliquam mi viverra ut. Ut condimentum risus sed velit egestas, quis blandit neque pulvinar.
 
-\end{hbStatBlock}
+  \end{hbStatBlock}
 
-% Separating large parts, or chapters may help speed up
-% compilation. Do your own experiments.
-\include{skel-part1}
-\include{skel-part2}
+  % Separating large parts, or chapters may help speed up
+  % compilation. Do your own experiments.
+  \include{skel-part1}
+  \include{skel-part2}
 
-\hbAppendix
+  \hbAppendix
 
-\hbRootAppendix{An appendix}
+  \hbRootAppendix{An appendix}
 
-% XXX: sections in part messes up the TOC
+  \section{Ex suscipit} \lipsum[126]
+  \section{Congue elit} \lipsum[128-129]
+  \section{Volutpat orci} \lipsum[130-131]
 
-\section{Ex suscipit} \lipsum[126]
-\section{Congue elit} \lipsum[128-129]
-\section{Volutpat orci} \lipsum[130-131]
+  \backmatter
 
-\backmatter
+  \hbRootChapter{Closing thoughts} \lipsum[127]
 
-\hbRootChapter{Closing thoughts} \lipsum[127]
-
-\renewcommand{\hbBackcoverHeader}{Back Cover \protect\\ Placeholder Title}
-\renewcommand{\hbBackcoverClose}{For use the the 5th edition rulebooks. Created by Artefact2, typeset with \XeTeX.}
-\renewcommand{\hbBackcoverLink}{\normalsize\url{https://github.com/Artefact2/texbrew/}}
-\renewcommand*{\hbBackcover}{assets/samples/cover}
-\renewcommand*{\hbBackcoverLogo}{assets/dnd-logo-initials}
-\renewcommand{\hbBackcoverContent}{\lipsum[2]}
-\hbMakeBackcover
+  \renewcommand{\hbBackcoverHeader}{Back Cover \protect\\ Placeholder Title}
+  \renewcommand{\hbBackcoverClose}{For use the the 5th edition rulebooks. Created by Artefact2, typeset with \XeTeX.}
+  \renewcommand{\hbBackcoverLink}{\normalsize\url{https://github.com/Artefact2/texbrew/}}
+  \renewcommand*{\hbBackcover}{assets/samples/cover}
+  \renewcommand*{\hbBackcoverLogo}{assets/dnd-logo-initials}
+  \renewcommand{\hbBackcoverContent}{\lipsum[2]}
+  \hbMakeBackcover
 
 \end{document}
